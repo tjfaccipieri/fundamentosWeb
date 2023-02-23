@@ -5,44 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
   </head>
   <body>
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./contato.html">Contato</a></li>
-    </ul>
-    <h1>Entre em contato comigo</h1>
-    <form>
-      <label for="nome">Nome:</label>
-      <br />
-      <input type="text" id="nome" />
-      <br />
-      <br />
+    <nav>
+      <p>ZombieLand</p>
+      <ul>
+        <li><a href="./index.html" class="disabled">Home</a></li>
+        <li><a href="./contato.html" >Contato</a></li>
+      </ul>
+    </nav>
+    <hr>
 
-      <label for="email">E-mail:</label>
-      <br />
-      <input type="email" id="email" />
-      <br />
-      <br />
+  <main class="contato">
+    <section class="formulario">
+      <h3>Contato</h2>
+      <form>
+        <div class="campos-form">
+          <label for="nome">Nome:</label>
+          <input onkeyup="validaNome()" id="nome" name="nome" type="text" placeholder="Insira o seu nome completo">
+          <div id="txtNome"></div>
+        </div>
+        
+        <div class="campos-form">
+          <label for="email">E-mail:</label>
+          <input onkeyup="validaEmail2()" id="email" name="email" type="text" placeholder="Insira o seu e-mail">
+          <div id="txtEmail"></div>
+        </div>
+        
+        <div class="campos-form">
+          <label for="mensagem">Mensagem:</label>
+          <textarea onkeyup="validaMensagem()" id="mensagem" name="mensagem" rows="8" placeholder="Deixe sua mensagem para nossos zumbis"></textarea>
+          <div id="txtMensagem"></div>
+        </div>
+        
+        <button onclick="enviarForm()">
+          Enviar
+        </button>
 
-      <label for="assunto">Assunto:</label>
-      <br />
-      <textarea name="assunto" id="assunto" cols="30" rows="5"></textarea>
-      <br />
-      <br />
-      <button>Enviar</button>
-    </form>
+        
+      </form>
+    </section>
+    
+    <section>
+      <h3>Endereço</h2>
+      <div class="endereco">
+        <span>Rua das ruas, nº 12345</p>
+        <span>Praia Grande - SP - Brasil</p>
+        <span>Terra - Sistema Solar - Via Láctea</p>
+      </div>
 
-    <h2>Endereço:</h2>
-    <p>Praia Grande - SP</p>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14575.651326710187!2d-46.52589089999999!3d-24.03413885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1676561129019!5m2!1spt-BR!2sbr"
-      width="600"
-      height="450"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39735.200853326256!2d-115.49441563337662!3d51.504958766469095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53772697e19e324d%3A0x2545af1e5c14084!2sZombie%20Peak!5e0!3m2!1spt-BR!2sbr!4v1663867049839!5m2!1spt-BR!2sbr" class="mapa" id="mapa" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onmouseover="mapaZoom()" onmouseout="mapaNormal()"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com amor e carinho por: Thiago Faccipieri - 2022 &copy;</p>
+  </footer>
+
+
+  <script src="./assets/js/script.js"></script>
   </body>
 </html>
