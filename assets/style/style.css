@@ -140,6 +140,7 @@ footer {
   display: flex;
   gap: 3rem;
   justify-content: center;
+  padding: 40px
 }
 
 .endereco {
